@@ -1,0 +1,103 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/admin">
+            <mat-icon mat-icon>home</mat-icon>
+            Home
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/admin/profile">
+            <mat-icon mat-icon>person-icon</mat-icon>
+            Profile
+        </button>
+        <mat-divider></mat-divider>
+
+        <button mat-list-item [matMenuTriggerFor]="categoriesMenu">
+            <mat-icon>list</mat-icon>
+
+            Categories
+        </button>
+
+        <mat-menu #categoriesMenu="matMenu" xPosition="after">
+            <button mat-menu-item routerLink="/admin/add-category">
+                <mat-icon svgIcon="mdiPlus"> </mat-icon>
+                Add Category
+            </button>
+            <button mat-menu-item routerLink="/admin/delete-category">
+                <mat-icon> <svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiDelete"></path>
+                    </svg></mat-icon>
+                Delet Category
+            </button>
+            <button mat-menu-item routerLink="/categories/subcategory3">
+                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiUpdate"></path>
+                    </svg></mat-icon>
+                Update Category
+            </button>
+        </mat-menu>
+
+
+        <mat-divider></mat-divider>
+        <button mat-list-item [matMenuTriggerFor]="subjectMenu">
+            <mat-icon>list</mat-icon>
+
+            Subject
+        </button>
+
+        <mat-menu #subjectMenu="matMenu" xPosition="after">
+            <button mat-menu-item routerLink="/admin/add-subject">
+                <mat-icon svgIcon="mdiPlus"> </mat-icon>
+                Add Subject
+            </button>
+            <button mat-menu-item routerLink="/admin/delete-subject">
+                <mat-icon> <svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiDelete"></path>
+                    </svg></mat-icon>
+                Delet Subject
+            </button>
+            <button mat-menu-item routerLink="/categories/subcategory3">
+                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiUpdate"></path>
+                    </svg></mat-icon>
+                Update Subject
+            </button>
+        </mat-menu>
+        <mat-divider></mat-divider>
+        <button mat-list-item [matMenuTriggerFor]="booksMenu">
+            <mat-icon>list</mat-icon>
+
+            Books
+        </button>
+
+        <mat-menu #booksMenu="matMenu" xPosition="after">
+            <button mat-menu-item routerLink="/admin/add-book">
+                <mat-icon svgIcon="mdiPlus"> </mat-icon>
+                Add Books
+            </button>
+            <button mat-menu-item routerLink="/admin/delete-book">
+                <mat-icon> <svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiDelete"></path>
+                    </svg></mat-icon>
+                Delet Books
+            </button>
+            <button mat-menu-item routerLink="/categories/subcategory3">
+                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path [attr.d]="mdiUpdate"></path>
+                    </svg></mat-icon>
+                Update Books
+            </button>
+        </mat-menu>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/admin/profile">
+            <mat-icon mat-icon>logout</mat-icon>
+            Logout
+        </button>
+    </mat-action-list>
+</mat-card>

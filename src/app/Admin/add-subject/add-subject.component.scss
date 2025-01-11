@@ -1,0 +1,26 @@
+.form-container {
+  display: flex;
+  flex-direction: column; /* Arranges children in a column */
+  gap: 16px; /* Adds spacing between form fields */
+  width: 90%; /* Ensures the form takes full width */
+  max-width: 60%; /* Restricts form width to 600px */
+  margin: 0 auto; /* Centers the form horizontally */
+}
+
+ 
+.file-upload {
+  display: flex;
+  flex-direction: column; /* Stacks the label and input */
+  gap: 8px; /* Adds spacing between label and input */
+}
+
+ 
+
+.addsub{
+  
+  text-align: center;
+  margin-bottom: 30px;
+  text-decoration: underline;
+ margin-top: 10px;
+}
+ 
