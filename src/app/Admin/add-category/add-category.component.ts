@@ -20,14 +20,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatDividerModule,
-    RouterLink
+    MatDividerModule
   ],
   templateUrl: './add-category.component.html',
   styleUrl: './add-category.component.scss'
 })
 export class AddCategoryComponent implements OnInit {
-  
+
   category:any={
     title: '',
     description:'',
@@ -35,16 +34,16 @@ export class AddCategoryComponent implements OnInit {
   };
 
   constructor(private _category:CategoryService,private _snack:MatSnackBar){
-  
+
   }
-  
+
     ngOnInit(): void {
-     
+
     }
     upload(event:any){
       this.category.file = event.target.files[0];
     }
-  
+
     formSubmit(){
       if(this.category.title.trim() =='' || this.category.title==null){
         this._snack.open('Title required !!','',{
@@ -52,25 +51,26 @@ export class AddCategoryComponent implements OnInit {
         });
         return;
       }
-    const  formdata = new FormData(); 
+    const  formdata = new FormData();
     formdata.append('categoryName' ,this.category.title);
     formdata.append('discription',this.category.description);
     formdata.append('imagePath',this.category.file as Blob);
 
 
-  
+
       this._category.addCategory(formdata).subscribe((data:any)=>{
         this._snack.open('you have successfully upload your category!!','',{
           duration:10000,
         });
-          this.category.title=''
-          this.category.description=''
-          
+          this.category.title='';
+          this.category.description='';
+          this.category.file = null;
+
         },
         (error)=>{
           console.log(this.category);
           console.log(error);
-          
+
         });
     }
 }

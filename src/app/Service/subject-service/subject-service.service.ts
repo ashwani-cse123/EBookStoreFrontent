@@ -7,8 +7,25 @@ import baseUrl from '../helper';
 })
 export class SubjectServiceService {
 
-  constructor(private http:HttpClient) { }
-  public getCategory(){
-    return this.http.get(`${baseUrl}/get-category`);
+  constructor(private _http:HttpClient) { }
+
+  public getSubject(){
+    return this._http.get(`${baseUrl}/get-subject`);
+  }
+
+  public addSubject(formdata:any){
+    return this._http.post(`${baseUrl}/save-subject`,formdata, {responseType:"text"});
+  }
+
+  public deleteSubject(id:number){
+    return this._http.delete(`${baseUrl}/delete-subject/${id}`);
+  }
+
+  public updateSubject(id:number, formData:any){
+    return this._http.put(`${baseUrl}/update-subject/${id}`, formData, {responseType: "text"});
+  }
+
+  public getSubjectByCategoryId(id: number){
+    return this._http.get(`${baseUrl}/get-subject/${id}`);
   }
 }

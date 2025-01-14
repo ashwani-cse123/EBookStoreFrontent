@@ -1,30 +1,30 @@
 <mat-toolbar class="custom-navbar">
-    <button 
+    <button
     href="/"
-    mat-icon-button 
+    mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with menu icon">
       <mat-icon>menu_book</mat-icon>
 </button>
     <span>Examportal</span>
     <span class="example-spacer"></span>
-    <a 
+    <a
     *ngIf="!isLoggedIn"
     [routerLink]="'/login'"
-    mat-icon-button class="size white-text"
+    mat-icon-button class="size text-white"
      aria-label="Example icon-button with heart icon">
       Login
     </a>
-    <a  
+    <a
     *ngIf="!isLoggedIn"
     [routerLink]="'/signup'"
     mat-icon-button
-    class="size"
+    class="size text-white"
      aria-label="Example icon-button with heart icon">
      Register
     </a>
 
-    <button 
+    <button
     *ngIf="isLoggedIn && user"
     mat-icon-button
     class="size"
@@ -33,7 +33,7 @@
      {{user.username}}
   </button>
 
-    <a  
+    <a
     (click)="logout()"
     *ngIf="isLoggedIn"
     mat-icon-button
@@ -42,6 +42,5 @@
      Logout
     </a>
 
-   
+
   </mat-toolbar>
-  

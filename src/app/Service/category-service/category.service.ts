@@ -7,16 +7,22 @@ import baseUrl from '../helper';
 })
 export class CategoryService {
 
-  
+
   constructor(private _http:HttpClient) { }
 
-  // //load category
-  // public categories(){
-  //   return this._http.get(`${baseUrl}/category/`);
-  // }
+  public getCategory(){
+    return this._http.get(`${baseUrl}/get-category`);
+  }
 
-  //add new category
   public addCategory(formdata:any){
-    return this._http.post(`${baseUrl}/save`,formdata, {responseType:"text"});
+    return this._http.post(`${baseUrl}/add-category`,formdata, {responseType:"text"});
+  }
+
+  public deleteCategory(id:number){
+    return this._http.delete<any>(`${baseUrl}/delete-category/${id}`);
+  }
+
+  public updateCategory(id:number, formData:any){
+    return this._http.put(`${baseUrl}/update-category/${id}`, formData, {responseType: "text"});
   }
 }

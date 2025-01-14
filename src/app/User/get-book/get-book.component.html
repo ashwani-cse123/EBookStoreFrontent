@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 mb-4"
+      *ngFor="let item of bookObj"
+    >
+      <!-- Use a button to wrap the entire card -->
+      <button
+        class="btn p-0 w-100 text-start"
+        style="border: none; background: none;"
+      >
+        <div class="card custom-card">
+          <img class="card-img-top" [src]="'http://localhost:8080' + item.imageUrl" alt="{{ item.subjectName }} image">
+          <div class="card-body">
+            <h5 class="card-title">{{item.bookName}}</h5>
+            <p class="card-text"> {{item.description}}</p>
+            <p class="card-text"> {{item.authorName}}</p>
+            <p class="card-text"> {{item.bookPrice}}</p>
+
+            <a
+            [href]="'http://localhost:8080' + item.bookUrl"
+            target="_blank"
+            class="btn btn-primary"
+            download="{{item.bookUrl}}"
+          >
+            Download/View PDF
+          </a>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

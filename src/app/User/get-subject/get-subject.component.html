@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 mb-4"
+      *ngFor="let item of subjectObj"
+    >
+      <!-- Use a button to wrap the entire card -->
+      <button
+        class="btn p-0 w-100 text-start"
+        (click)="onCardClick(item.id)"
+        style="border: none; background: none;"
+      >
+        <div class="card custom-card">
+          <img class="card-img-top" [src]="'http://localhost:8080' + item.imagePath" alt="{{ item.subjectName }} image">
+          <div class="card-body">
+            <h5 class="card-title">{{item.subjectName}}</h5>
+            <p class="card-text"> {{item.discription}}</p>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,21 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
- .size{
-    height:65px !important;
-    width:65px !important;
-    font-size:15px !important;
-    margin-left: 35px;
-    margin-right: 20px;
- } 
- .custom-navbar {
-   background-color: #8d81a3; /* Purple */
-   color: white;
- }
+
+ .example-spacer {
+  flex: 1 1 auto;
+}
+.size{
+  height:65px !important;
+  width:65px !important;
+  font-size:15px !important;
+  margin-left: 35px;
+  margin-right: 20px;
+}
+.custom-navbar {
+ background-color: #482e53; /* Purple */
+ color: white;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 1000; /* Ensure it's above other elements */
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

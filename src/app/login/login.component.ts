@@ -16,7 +16,6 @@ import { LoginService } from '../Service/Logi-Service/login.service';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    RouterLink,
     MatSnackBarModule,
     FormsModule
 
@@ -26,7 +25,7 @@ import { LoginService } from '../Service/Logi-Service/login.service';
 })
 export class LoginComponent implements OnInit{
 
-  
+
 loginData:any={
   username:'',
   password:'',
@@ -46,12 +45,12 @@ loginData:any={
       this.snack.open('Username is required !!','');
       return;
     }
-  
+
     if(this.loginData.password.trim()=='' || this.loginData.password==null){
       this.snack.open('Password is required !!','');
       return;
     }
-  
+
     //request to server or in this case our hard-coded login service
     if(this.login.login(this.loginData.username, this.loginData.password)){
       this.login.getUserTest();

@@ -8,6 +8,10 @@ import { AddBookComponent } from './Admin/add-book/add-book.component';
 import { DeleteCategoryComponent } from './Admin/delete-category/delete-category.component';
 import { DeleteSubjectComponent } from './Admin/delete-subject/delete-subject.component';
 import { DeleteBookComponent } from './Admin/delete-book/delete-book.component';
+import { GetCategoryComponent } from './User/get-category/get-category.component';
+import { GetSubjectComponent } from './User/get-subject/get-subject.component';
+import { GetBookComponent } from './User/get-book/get-book.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export const routes: Routes = [
   {
@@ -59,6 +63,23 @@ export const routes: Routes = [
   {
     path: 'user-dashboard',
     component: UserDasboardComponent,
-    // canActivate:[normalGaurd],
+    children: [
+      {
+        path: 'get-categories',
+        component: GetCategoryComponent,
+      },
+      {
+        path:'get-subject/:category_id',
+        component: GetSubjectComponent
+      },
+      {
+        path: 'get-book/:subject_id',
+        component: GetBookComponent
+      }
+    ]
   },
+  {
+    path: 'sign-up',
+    component: SignUpComponent
+  }
 ];
