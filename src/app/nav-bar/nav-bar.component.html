@@ -1,47 +1,43 @@
 <mat-toolbar class="custom-navbar">
-    <button 
+  <!-- Left Icon/Logo -->
+  <button
     href="/"
-    mat-icon-button 
+    mat-icon-button
     class="example-icon"
-    aria-label="Example icon-button with menu icon">
-      <mat-icon>menu_book</mat-icon>
-</button>
-    <span>Examportal</span>
-    <span class="example-spacer"></span>
-    <a 
-    *ngIf="!isLoggedIn"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu_book</mat-icon>
+  </button>
+  <span>Examportal</span>
+
+  <!-- Spacer to push items to the right -->
+  <span class="example-spacer"></span>
+
+  <!-- Right Items: Login, Register, Logout -->
+  <!-- <a
+  
     [routerLink]="'/login'"
-    mat-icon-button class="size white-text"
-     aria-label="Example icon-button with heart icon">
-      Login
-    </a>
-    <a  
-    *ngIf="!isLoggedIn"
+    mat-icon-button
+    class="size text-white"
+    aria-label="Login button"
+  >
+    Login
+  </a> -->
+  <!-- <a
     [routerLink]="'/signup'"
     mat-icon-button
-    class="size"
-     aria-label="Example icon-button with heart icon">
-     Register
-    </a>
-
-    <button 
-    *ngIf="isLoggedIn && user"
+    class="size text-white"
+    aria-label="Register button"
+  >
+    Register
+  </a> -->
+  <!-- <a
+    
     mat-icon-button
-    class="size"
-    routerLink="/admin/profile"
-    aria-label="Example icon-button with heart icon">
-     {{user.username}}
-  </button>
-
-    <a  
-    (click)="logout()"
-    *ngIf="isLoggedIn"
-    mat-icon-button
-    class="size"
-     aria-label="Example icon-button with heart icon">
-     Logout
-    </a>
-
-   
-  </mat-toolbar>
-  
+    class="size text-white"
+    aria-label="Logout button"
+    *ngIf="isLoggedIn" (click)="logout()"
+  >
+    Logout
+  </a> -->
+</mat-toolbar>

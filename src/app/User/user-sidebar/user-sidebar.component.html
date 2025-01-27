@@ -1,21 +1,36 @@
-<mat-card>
-    <mat-action-list>
-        <div mat-subheader>Available Categories</div>
-        <mat-divider></mat-divider>
-        <button mat-list-item  routerLink="/user-dashboard/0">
-            <mat-icon mat-icon >quiz</mat-icon>
-            All Quizes
-        </button>
+<div class="container-fluid ">
+  <!-- Toggle Button -->
+  <button class="btn bootstrap-icons mb-1 mt-2 " type="button" data-bs-toggle="collapse" data-bs-target="#menuContent"
+    aria-expanded="false" aria-controls="menuContent" (click)="toggleMenu()">
+    <i class="fas fa-x " [class.fa-bars]="!isMenuOpen" [class.fa-times]="isMenuOpen"> Menu</i>
+    <!-- FontAwesome icon toggle -->
+  </button>
 
-        <button [routerLink]="'/user-dashboard/'+c.cid" mat-list-item *ngFor="let c of categories">
-            <mat-icon mat-icon>quiz</mat-icon>
-           {{c.title}}
-        </button>
-
-        <mat-divider></mat-divider>
-        <button mat-list-item>
-            <mat-icon mat-icon>logout</mat-icon>
-            Logout
-        </button>
-    </mat-action-list>
-</mat-card>
+  <!-- Collapsible Menu -->
+  <div class="collapse" id="menuContent">
+    <div class="card card-custom ">
+      <ul class="list-group  list-group-custom">
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/user-dashboard" class="text-decoration-none">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/user-dashboard" class="text-decoration-none">
+            <i class="fas fa-user"></i> Profile
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/user-dashboard/find-category" class="text-decoration-none">
+            <i class="fas fa-th-list"></i> All Books
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/" class="text-decoration-none">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

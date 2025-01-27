@@ -1,0 +1,31 @@
+<h4 class="addsub">update your subject</h4>
+
+<form action="" class="form-container"  (ngSubmit)="formSubmit()">
+  
+  
+  <mat-form-field>
+    <mat-label>Subject Name</mat-label>
+    <input type="text"
+    required
+    [(ngModel)]="subjecObj.title"
+      name="subjectName" 
+      matInput/>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea  
+     name="subjectDiscription"
+     [(ngModel)]="subjecObj.description"
+      matInput></textarea>
+  </mat-form-field>
+  
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Upload your image</label>
+    <input class="form-control"   (change)="upload($event)" type="file" name = "file" id="formFile">
+  </div>
+
+  <div class="container text-center">
+    <button class="btn btn-warning">Update</button>
+</div>
+</form>

@@ -28,15 +28,9 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <path [attr.d]="mdiDelete"></path>
                     </svg></mat-icon>
-                Delet Category
+                Delet/Update Category
             </button>
-            <button mat-menu-item routerLink="/categories/subcategory3">
-                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path [attr.d]="mdiUpdate"></path>
-                    </svg></mat-icon>
-                Update Category
-            </button>
+          
         </mat-menu>
 
 
@@ -57,15 +51,9 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <path [attr.d]="mdiDelete"></path>
                     </svg></mat-icon>
-                Delet Subject
+                Delet /Update Subject
             </button>
-            <button mat-menu-item routerLink="/categories/subcategory3">
-                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path [attr.d]="mdiUpdate"></path>
-                    </svg></mat-icon>
-                Update Subject
-            </button>
+            
         </mat-menu>
         <mat-divider></mat-divider>
         <button mat-list-item [matMenuTriggerFor]="booksMenu">
@@ -84,18 +72,12 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <path [attr.d]="mdiDelete"></path>
                     </svg></mat-icon>
-                Delet Books
+                Delet Books/Update Books
             </button>
-            <button mat-menu-item routerLink="/categories/subcategory3">
-                <mat-icon><svg [attr.width]="iconSize" [attr.height]="iconSize" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path [attr.d]="mdiUpdate"></path>
-                    </svg></mat-icon>
-                Update Books
-            </button>
+           
         </mat-menu>
         <mat-divider></mat-divider>
-        <button mat-list-item routerLink="/admin/profile">
+        <button   mat-list-item routerLink="/user-dashboard">
             <mat-icon mat-icon>logout</mat-icon>
             Logout
         </button>

@@ -1,0 +1,118 @@
+<div class="container mt-3">
+  <div *ngFor="let item of loadBookObj" class="card p-3 " style="border: 1px solid #0f0f0f; border-radius: 8px; margin-bottom: 10px;">
+    <div class="row g-2 align-items-center">
+      <!-- Image Area -->
+      <div class="col-12 col-md-3">
+        <img [src]="'http://localhost:8080' + item.bookImage" alt="{{ item.bookImage }} bookImage"
+             class="img-fluid rounded" 
+             style="object-fit: cover; height: 100%; width: 100%;">
+      </div>
+
+      <!-- Content Area -->
+      <div class="col-12 col-md-6" style="padding-left: 20px;">
+        <!-- Title -->
+        <h5 class="card-title mb-1">{{item.bookName}}</h5>
+        
+        <!-- Author Name -->
+        <p class="card-subtitle text-muted mb-1">Author: {{item.bookAutherName}}</p>
+        
+        <!-- Price -->
+        
+        
+        <!-- Description -->
+        
+        <p class="card-text mb-1">{{item.bookDiscription}}</p>
+        <p class="card-text mb-1 mt-2"><strong>Pages:</strong>{{item.bookPrice}}</p>
+      </div>
+
+      <!-- Buttons Area -->
+      <div class="col-12 col-md-3 d-flex flex-column align-items-start align-items-md-end">
+        <button (click)="toggleLike()" class="btn btn-outline-primary mb-2 w-100 w-md-auto d-flex align-items-center justify-content-center">
+          <i class="bi bi-hand-thumbs-up me-1"></i>   {{ isLiked ? 'Liked' : 'Like' }}
+
+        </button>
+        <button class="btn btn-outline-success mb-2 w-100 w-md-auto d-flex align-items-center justify-content-center">
+          <i class="bi bi-share me-1" (click)="shareBook()"></i> Share
+        </button>
+        <a [href]="getFileDownloadUrl(item.filePath)"
+        target="_blank"
+        [download]="item.filePath" class="btn btn-outline-primary w-100 w-md-auto d-flex align-items-center justify-content-center">
+          <i class="bi bi-download me-1"></i> Download
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-3 g-33">
+ 
+    <div class="col" *ngFor="let item of loadBookObj">
+      <div class="card h-100 custom-card" style="background-color: #94b4c579; border: 1px solid #007bff; border-radius: 8px;">
+        <div class="card-body text-center">
+       
+          <img [src]="'http://localhost:8080' + item.bookImage" alt="{{ item.bookImage }} bookImage" class="mb-3"
+            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+
+        
+          <h5 class="card-title">{{item.bookName}}</h5>
+       
+          <h6 class="card-subtitle text-muted">Author: {{item.bookAutherName}}</h6>
+        </div>
+        <div class="card-body">
+         
+          <p class="card-text"></p>
+       
+          <p class="card-text"><strong>Price:</strong> ₹ {{item.bookPrice}}</p>
+
+           
+          <div class="d-flex justify-content-between">
+          
+            <button class="btn btn-outline-primary d-flex align-items-center justify-content-center me-2"
+              style="width: 120px; height: 50px;">
+              <i class="bi bi-hand-thumbs-up me-2"></i> Like
+            </button>
+
+            
+            <button class="btn btn-outline-success d-flex align-items-center justify-content-center me-2"
+              style="width: 120px; height: 50px;">
+              <i class="bi bi-share me-2"></i> Share
+            </button>
+
+           
+            <a [href]="getFileDownloadUrl(item.filePath)"
+            target="_blank"
+            [download]="item.filePath"
+              class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+              style="width: 100px; height: 50px;">
+              <i class="bi bi-download me-2"></i> Download
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

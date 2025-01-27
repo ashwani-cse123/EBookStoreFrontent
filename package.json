@@ -25,6 +25,8 @@
     "@angular/ssr": "^19.0.6",
     "@mdi/js": "^7.4.47",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
+    "@ngx-share/button": "^7.1.4",
+    "@ngx-share/core": "^7.1.4",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",

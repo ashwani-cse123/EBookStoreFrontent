@@ -61,10 +61,11 @@ export class AddCategoryComponent implements OnInit {
   
       this._category.addCategory(formdata).subscribe((data:any)=>{
         this._snack.open('you have successfully upload your category!!','',{
-          duration:10000,
+          duration:3000,
         });
           this.category.title=''
           this.category.description=''
+          this.category.file=null
           
         },
         (error)=>{

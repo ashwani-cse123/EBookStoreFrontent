@@ -1,20 +1,22 @@
 <div class="container mt-4">
-    <div class="row">
-      
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4"*ngFor="let item of subjectObj">
-        <div class="card custom-card">
-            <img class="card-img-top" [src]="'http://localhost:8080' + item.imagePath" alt="{{ item.categoryName }} image">
-          <div class="card-body">
-            <h5 class="card-title">{{item.categoryName}}</h5>
-            <p class="card-text"> {{item.discription}}</p>
-            <div class="d-flex justify-content-center gap-3 mt-3">
-              <button class="btn btn-primary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </div>
+  <div class="row">
+
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let item of subjectObj">
+      <div class="card custom-card">
+        <img class="card-img-top" [src]="item.imagePath"
+          alt="{{ item.categoryName }}  imagePath">
+        <div class="card-body">
+          <h5 class="card-title">{{item.categoryName}}</h5>
+          <p class="card-text"> {{item.discription}}</p>
+          <div class="d-flex justify-content-center gap-3 mt-3">
+            <button class="btn btn-primary" (click)="onupdateCategory(item.id)">Update</button>
+            <a class="btn btn-danger" href="http://localhost:4200/admin/delete-category"
+              (click)="ondeleteCategory(item.id)">Delete</a>
           </div>
         </div>
       </div>
-     
-  
     </div>
+
+
   </div>
+</div>

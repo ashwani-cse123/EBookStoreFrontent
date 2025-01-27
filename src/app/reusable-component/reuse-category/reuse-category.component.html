@@ -1,0 +1,44 @@
+<mat-card>
+    <h5>Update category</h5>
+    <!-- {{category|json}} -->
+    <mat-card-content>
+       <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input
+                         required
+                         type="text"
+                         name="title"
+                          matInput
+                         placeholder="Enter here.."
+                         [(ngModel)]="category.title"/>
+                    </mat-form-field>
+
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Description</mat-label>
+                    <textarea  
+                        name="description" 
+                        matInput 
+                        placeholder="Enter here description.."
+                        rows="10"
+                        [(ngModel)]="category.description">
+                    </textarea>
+                    
+                    </mat-form-field>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload your image</label>
+                        <input class="form-control"  (change)="upload($event)" type="file" name = "file" id="formFile">
+                      </div>
+                    <div class="container text-center">
+                        <button mat-raised-button color="warning" >Update</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+       </div>
+    </mat-card-content>
+</mat-card>

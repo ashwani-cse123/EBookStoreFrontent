@@ -8,27 +8,40 @@ import { AddBookComponent } from './Admin/add-book/add-book.component';
 import { DeleteCategoryComponent } from './Admin/delete-category/delete-category.component';
 import { DeleteSubjectComponent } from './Admin/delete-subject/delete-subject.component';
 import { DeleteBookComponent } from './Admin/delete-book/delete-book.component';
+import { AllBooksComponent } from './User/all-books/all-books.component';
+import { ReuseCategoryComponent } from './reusable-component/reuse-category/reuse-category.component';
+import { AllCategoryfindComponent } from './User/all-categoryfind/all-categoryfind.component';
+import { AllSubjectByCIdComponent } from './User/all-subject-by-cid/all-subject-by-cid.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
+import { UpdateSubjectComponent } from './Admin/update-subject/update-subject.component';
+import { UpdateBookComponent } from './Admin/update-book/update-book.component';
+import { AdminGuardService } from './Service/auth/admin-guard.service';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+   component:LoginComponent,
     pathMatch: 'full',
   },
-
   {
     path: 'login',
     component: LoginComponent,
     pathMatch: 'full',
   },
   {
+    path:'signup',
+    component:SignUpComponent
+  },
+  {
     path: 'admin',
     component: AdminDasboardComponent,
-    // canActivate:[adminGuard],
+    // canActivate:[AdminGuardService],
     children: [
       {
         path: '',
         component: AddCategoryComponent,
+       
       },
       {
         path: 'add-category',
@@ -53,6 +66,22 @@ export const routes: Routes = [
       {
         path: 'delete-book',
         component:DeleteBookComponent
+      },
+      {
+        path: 'update-category/:id',
+        component:ReuseCategoryComponent
+      },
+      {
+        path: 'all-book',
+        component: AllBooksComponent
+      },
+      {
+        path: 'update-subject/:id',
+        component: UpdateSubjectComponent
+      },
+      {
+        path: 'update-book/:id',
+        component: UpdateBookComponent
       }
     ],
   },
@@ -60,5 +89,27 @@ export const routes: Routes = [
     path: 'user-dashboard',
     component: UserDasboardComponent,
     // canActivate:[normalGaurd],
+    children:[
+      {
+        path: 'all-book/:id',
+        component:AllBooksComponent
+      },
+      {
+        path: 'find-category',
+        component:AllCategoryfindComponent,
+      },
+      {
+        path:'',
+        redirectTo:'find-category',
+        pathMatch:'full'
+      },
+      {
+        path: 'find-subjectByCId/:id',
+        component:AllSubjectByCIdComponent
+      }
+      
+     
+       
+    ]
   },
 ];

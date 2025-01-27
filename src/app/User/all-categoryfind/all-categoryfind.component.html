@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-3  gx-4 gy-5">
+    <!-- Card Loop -->
+    <div class="col" *ngFor="let item of categoryobj">
+      <div class="card h-100 shadow-sm">
+        <!-- Card Image -->
+        <img class="card-img-top" [src]="'http://localhost:8080' + item.imagePath" alt="{{ item.categoryName }} image"
+          style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+        <!-- Card Body -->
+        <div class="card-body text-center">
+          <!-- Title -->
+          <h5 class="card-title">{{ item.categoryName }}</h5>
+          <!-- Description -->
+          <p class="card-text text-muted">
+            {{ item.discription }}
+          </p>
+
+          <a class="btn btn-primary me-2" [routerLink]="['/user-dashboard/find-subjectByCId', item.id]">
+            >Go to Related Subject</a>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
