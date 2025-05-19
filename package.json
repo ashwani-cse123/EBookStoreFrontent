@@ -24,6 +24,7 @@
     "@angular/router": "^19.0.0",
     "@angular/ssr": "^19.0.6",
     "@mdi/js": "^7.4.47",
+    "@netlify/angular-runtime": "^2.3.1",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@ngx-share/button": "^7.1.4",
     "@ngx-share/core": "^7.1.4",

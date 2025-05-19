@@ -70,6 +70,7 @@ export const routes: Routes = [
       {
         path: 'update-category/:id',
         component: ReuseCategoryComponent,
+        
       },
       {
         path: 'all-book',
