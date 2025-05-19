@@ -1,0 +1,39 @@
+footer {
+  background-color: #343a40; /* Dark background */
+  color: white; /* Text color */
+  padding: 1rem 0; /* Reduce top and bottom padding */
+  font-size: 0.9rem; /* Adjust font size if needed */
+}
+
+ 
+
+footer p {
+  margin: 0.2rem 0; /* Reduce spacing between paragraphs */
+}
+
+footer ul {
+  padding-left: 1rem; /* Adjust left padding for lists */
+  margin: 0;
+}
+ 
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: flex-start;
+  }
+  .text-container {
+    padding-left: 0; /* Remove padding on smaller screens */
+    padding-bottom: 20px; /* Add some spacing at the bottom */
+  }
+  .carousel-container {
+    width: 100%;
+     /* Make carousel full width on smaller screens */
+    padding-top: 20px; /* Add spacing at the top */
+    order: -1; /* Ensure the carousel appears at the top on smaller screens */
+  }
+  #id {
+    height: 250px; /* Reduce the image height on smaller screens */
+    object-fit: cover; /* Ensure images fill the space properly */
+  }
+}
+

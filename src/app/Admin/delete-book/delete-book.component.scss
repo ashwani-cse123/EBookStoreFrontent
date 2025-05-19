@@ -1,0 +1,26 @@
+.circle-img {
+    width: 80px; /* Define the size of the image */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image circular */
+    display: block;
+  }
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Add padding for spacing around text and icon */
+    font-size: 14px; /* Adjust font size for better alignment */
+    width: 100px; /* Set fixed width to match other buttons */
+    height: 40px; /* Set fixed height to match other buttons */
+  }
+
+  .btn-icon i {
+    margin-right: 5px; /* Add space between the icon and text */
+    font-size: 18px; /* Icon size adjustment */
+  }
+  .card:hover {
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.589); /* Adds shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+    transition: all 0.3s ease; /* Smooth transition */
+  }

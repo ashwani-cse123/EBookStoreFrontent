@@ -1,0 +1,21 @@
+.custom-card {
+    max-width: 400px;
+    margin: 16px auto; /* Center card horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better visuals */
+    border-radius: 8px; /* Slightly rounded corners */
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover; /* Keeps the image proportionate */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  

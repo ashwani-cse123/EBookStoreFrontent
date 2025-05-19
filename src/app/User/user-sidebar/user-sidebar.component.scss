@@ -1,0 +1,38 @@
+ 
+  /* Change color of menu item text */
+.list-group-item a {
+    color: #2d2d2b; /* Change this to your preferred color (e.g., blue) */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  /* Change color of icons inside the menu */
+  .list-group-item i {
+    color: #000000; /* Change this to your preferred icon color */
+    margin-right: 8px; /* Optional: Adds space between icon and text */
+  }
+  
+  /* Change color of menu items on hover */
+  .list-group-item a:hover {
+    color: #28a745; /* Green color on hover */
+  }
+  
+  /* Change color of icons on hover */
+  .list-group-item a:hover i {
+    color: #000000; /* Green color for icons on hover */
+  }
+  /* Increase FontAwesome Icon Size */
+.list-group-item-custom i {
+    font-size: 1rem;  /* Increases icon size */
+    margin-right: 8px;  /* Adjust space between the icon and text */
+  }
+  
+  /* Increase size of text in the list items */
+  .list-group-item-custom a {
+    font-size: 1rem;  /* Increases the text size */
+  }
+  
+  /* Optional: Increase padding inside each list item for better spacing */
+  .list-group-item-custom {
+    padding: 10px 20px; /* Adjust padding to increase the area */
+  }
+  

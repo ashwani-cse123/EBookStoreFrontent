@@ -1,0 +1,47 @@
+.sidenav-container {
+    height: 100vh;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  /* Ensure the container takes up the full viewport */
+.responsive-sidenav-container {
+  height: 100vh;
+}
+
+/* Sidenav styles */
+.responsive-sidenav {
+  width: 250px; /* Fixed width for larger screens */
+}
+
+/* Main content */
+.responsive-content {
+  padding: 16px;
+}
+
+/* Hide sidenav for smaller screens */
+@media screen and (max-width: 768px) {
+  .responsive-sidenav {
+    width: 0;
+  }
+
+  mat-sidenav[mode="side"] {
+    display: none;
+  }
+
+  mat-sidenav[mode="over"] {
+    display: block;
+  }
+}
+
+/* Show toggle button on small screens */
+@media screen and (max-width: 768px) {
+  .responsive-toggle-button {
+    display: block;
+  }
+}

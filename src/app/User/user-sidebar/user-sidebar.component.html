@@ -1,0 +1,41 @@
+<div class="container-fluid ">
+  <!-- Toggle Button -->
+  <button class="btn bootstrap-icons mb-1 mt-2 " type="button" data-bs-toggle="collapse" data-bs-target="#menuContent"
+    aria-expanded="false" aria-controls="menuContent" (click)="toggleMenu()">
+    <i class="fas fa-x " [class.fa-bars]="!isMenuOpen" [class.fa-times]="isMenuOpen"> Menu</i>
+    <!-- FontAwesome icon toggle -->
+  </button>
+
+  <!-- Collapsible Menu -->
+  <div class="collapse" id="menuContent">
+    <div class="card card-custom ">
+      <ul class="list-group  list-group-custom">
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/user-dashboard" class="text-decoration-none">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/login" class="text-decoration-none">
+            <i class="fas fa-user"></i> AdminLogin
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/login" class="text-decoration-none">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/user-dashboard/find-category" class="text-decoration-none">
+            <i class="fas fa-th-list"></i> All Books
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a (click)="logoff()" class="text-decoration-none">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

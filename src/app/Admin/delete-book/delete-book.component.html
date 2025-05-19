@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let item of loadBookObj">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body d-flex align-items-center">
+            <img
+            [src]="item.bookImage" alt="{{ item.bookImage }}  bookImage"
+              alt="Book Image"
+              class="circle-img me-3"
+            >
+            <div>
+              <h5 class="card-title">{{item.bookName}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Author: {{item.bookAutherName}}</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              {{item.bookDiscription}}
+            </p>
+            <p class="card-text">
+              <strong>Pages:</strong>  {{item.bookPrice}}
+            </p>
+            <div class="container mt-5">
+              <div class="d-flex justify-content-start">
+                <button class="btn btn-warning btn-sm me-2" style="width: 100px; height: 40px;" (click)="onUpdate(item.id)" >Update</button>
+                <button class="btn btn-danger btn-sm me-2" style="width: 100px; height: 40px;" (click)="onDelete(item.id)" >Delete</button>
+                <a 
+                  href="path/to/your-book-file.pdf" 
+                  download="Book_Title.pdf" 
+                  class="btn btn-primary btn-sm btn-icon"
+                  title="Download"
+                >
+                  <i class="bi bi-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
