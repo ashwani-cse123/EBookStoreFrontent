@@ -21,27 +21,27 @@ import { AdminGuardService } from './Service/auth/admin-guard.service';
 export const routes: Routes = [
   {
     path: '',
-   component:LoginComponent,
-    pathMatch: 'full',
+    component: LoginComponent,
+    pathMatch: 'full'
   },
   {
     path: 'login',
     component: LoginComponent,
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
-    path:'signup',
-    component:SignUpComponent
+    path: 'signup',
+    component: SignUpComponent,
+    pathMatch:'full'
   },
   {
     path: 'admin',
     component: AdminDasboardComponent,
-    // canActivate:[AdminGuardService],
+    canActivate:[AdminGuardService],
     children: [
       {
         path: '',
         component: AddCategoryComponent,
-       
       },
       {
         path: 'add-category',
@@ -49,67 +49,64 @@ export const routes: Routes = [
       },
       {
         path: 'add-subject',
-        component: AddSubjectComponent
+        component: AddSubjectComponent,
       },
       {
-        path:'add-book',
-        component: AddBookComponent
+        path: 'add-book',
+        component: AddBookComponent,
       },
       {
-        path:'delete-category',
-        component: DeleteCategoryComponent
+        path: 'delete-category',
+        component: DeleteCategoryComponent,
       },
       {
-        path:'delete-subject',
-        component:DeleteSubjectComponent
+        path: 'delete-subject',
+        component: DeleteSubjectComponent,
       },
       {
         path: 'delete-book',
-        component:DeleteBookComponent
+        component: DeleteBookComponent,
       },
       {
         path: 'update-category/:id',
-        component:ReuseCategoryComponent
+        component: ReuseCategoryComponent,
       },
       {
         path: 'all-book',
-        component: AllBooksComponent
+        component: AllBooksComponent,
       },
       {
         path: 'update-subject/:id',
-        component: UpdateSubjectComponent
+        component: UpdateSubjectComponent,
       },
       {
         path: 'update-book/:id',
-        component: UpdateBookComponent
-      }
+        component: UpdateBookComponent,
+      },
     ],
   },
   {
     path: 'user-dashboard',
     component: UserDasboardComponent,
     // canActivate:[normalGaurd],
-    children:[
+    children: [
       {
         path: 'all-book/:id',
-        component:AllBooksComponent
+        component: AllBooksComponent,
       },
       {
         path: 'find-category',
-        component:AllCategoryfindComponent,
+        component: AllCategoryfindComponent,
       },
       {
-        path:'',
-        redirectTo:'find-category',
-        pathMatch:'full'
+        path: '',
+        redirectTo: 'find-category',
+        pathMatch: 'full',
       },
       {
         path: 'find-subjectByCId/:id',
-        component:AllSubjectByCIdComponent
-      }
-      
-     
-       
-    ]
+        component: AllSubjectByCIdComponent,
+      },
+    ],
   },
 ];

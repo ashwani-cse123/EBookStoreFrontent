@@ -64,7 +64,7 @@ export class ReuseCategoryComponent {
 
       const id = parseInt(this.updateId);
       this._category.updateCategory(id,formdata).subscribe((data:any)=>{
-        this._snack.open('you have successfully upload your category!!','',{
+        this._snack.open('you have successfully update your category!!','',{
           duration:3000,
         });
           this.category.title=''

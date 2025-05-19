@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { LoginService } from '../Logi-Service/login.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuardService {
+export class AdminGuardService implements CanActivate {
 
-  // constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private login: LoginService) {}
 
-  // canActivate(): boolean {
-  //   // Use AuthService to check if the user is logged in
-  //   if (this.authService.isLoggedIn()) {
-  //     return true;  // Allow access to the admin route
-  //   } else {
-  //     this.router.navigate(['/login']);  // Redirect to login if not logged in
-  //     return false;
-  //   }
-  // }
+canActivate(
+    route: ActivatedRouteSnapshot, 
+    state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    if(this.login.isLoggedIn() && this.login.getUserRole()=='Admin'){
+      return true;
+    }
+    this.router.navigate(['login']);
+    return false;
+  }
 }

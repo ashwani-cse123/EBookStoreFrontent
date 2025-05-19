@@ -4,7 +4,7 @@
     <div class="col" *ngFor="let item of categoryobj">
       <div class="card h-100 shadow-sm">
         <!-- Card Image -->
-        <img class="card-img-top" [src]="'http://localhost:8080' + item.imagePath" alt="{{ item.categoryName }} image"
+        <img class="card-img-top" [src]="item.imagePath" alt="{{ item.categoryName }} image"
           style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
         <!-- Card Body -->
         <div class="card-body text-center">

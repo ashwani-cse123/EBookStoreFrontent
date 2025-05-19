@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgProbeToken } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -7,7 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
@@ -31,7 +31,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class UserSidebarComponent {
 
-
+constructor(private router:Router){}
   isMenuOpen: boolean = false; // Tracks the state of the menu icon
 
   /**
@@ -39,5 +39,11 @@ export class UserSidebarComponent {
    */
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logoff(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);
   }
 }

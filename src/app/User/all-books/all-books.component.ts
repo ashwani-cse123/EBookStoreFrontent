@@ -37,7 +37,7 @@ export class AllBooksComponent implements OnInit {
        
     }
     getFileDownloadUrl(file: string): string {
-      return `http://localhost:8080${file}`; // Full download URL
+      return `${file}`; // Full download URL
     }
     shareBook() {
       if (navigator.share) {

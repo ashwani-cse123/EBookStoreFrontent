@@ -3,22 +3,42 @@ import { Injectable } from '@angular/core';
 import baseUrl from '../helper';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  public login(formdata:any){
-    return this.http.post(`${baseUrl}/login`,formdata, {responseType:"text"});
+  public login(formdata: any) {
+    return this.http.post(`${baseUrl}/login`, formdata);
   }
 
-// private isLoggedInTest = true;
- 
+  public isLoggedIn() {
+    let tokenStr = localStorage.getItem('token');
+    if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
-// public isLoggedInTestMethod(): boolean {
-//   return this.isLoggedInTest;
-// }
+ //logout: remove token from local storage
+  public logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    return true;
+  }
 
- 
+  //get token 
+  public getToken(){
+    return localStorage.getItem('token');
+  }
+
+  //get user role
+  public getUserRole(){
+    let user = localStorage.getItem('user');
+    return user;
+  }
+
+  
+
 }

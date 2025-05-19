@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../Service/Logi-Service/login.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ import { LoginService } from '../Service/Logi-Service/login.service';
     MatFormFieldModule,
     RouterLink,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -25,7 +26,7 @@ import { LoginService } from '../Service/Logi-Service/login.service';
 export class LoginComponent implements OnInit {
   loginData: any = {
     username: '',
-    password: ''
+    password: '',
   };
   // snack: any;
   // loginStatusSubject:any;
@@ -45,9 +46,9 @@ export class LoginComponent implements OnInit {
       this.loginData.username.trim() == '' ||
       this.loginData.username == null
     ) {
-      this.snack.open('Username is required !!', '',{
+      this.snack.open('Username is required !!', '', {
         duration: 3000,
-      } );
+      });
       return;
     }
 
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
       this.loginData.password.trim() == '' ||
       this.loginData.password == null
     ) {
-      this.snack.open('Password is required !!', '' ,{
+      this.snack.open('Password is required !!', '', {
         duration: 3000,
       });
       return;
@@ -63,19 +64,25 @@ export class LoginComponent implements OnInit {
     console.log(this.loginData.username);
     this.loginserv.login(this.loginData).subscribe((res: any) => {
       console.log(this.loginData.password);
-      if (res === 'ADMIN') {
-        // localStorage.setItem('loginAdmin', JSON.stringify(res.data))
-        this.router.navigate(['admin']);
-      } else if (res === 'NORMAL') {
+      if (res.role == 'Admin') {
+        localStorage.setItem('token',res.jwtToken);
+        localStorage.setItem('user',res.role);
+        this.router.navigate(['/admin']);
+      } else if (res.role == 'User') {
+        localStorage.setItem('token',res.jwtToken);
+        localStorage.setItem('user',res.role);
         this.router.navigate(['/user-dashboard']);
-      } else if (res === 'plese sinup first') {
+      } else if (res.role === 'User not found') {
         alert('user does not exist plese signUp first');
         this.router.navigate(['signup']);
       } else {
-        alert("password incorrect");
+        alert('password incorrect');
       }
-    });
-  }
+    },
+  (error)=>{
+alert("Plese sign up first!");
+  })
+  };
 }
 
 //request to server or in this case our hard-coded login service

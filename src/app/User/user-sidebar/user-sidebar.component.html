@@ -16,8 +16,13 @@
           </a>
         </li>
         <li class="list-group-item  list-group-item-custom">
-          <a routerLink="/user-dashboard" class="text-decoration-none">
-            <i class="fas fa-user"></i> Profile
+          <a routerLink="/login" class="text-decoration-none">
+            <i class="fas fa-user"></i> AdminLogin
+          </a>
+        </li>
+        <li class="list-group-item  list-group-item-custom">
+          <a routerLink="/login" class="text-decoration-none">
+            <i class="fas fa-user"></i> Login
           </a>
         </li>
         <li class="list-group-item  list-group-item-custom">
@@ -26,7 +31,7 @@
           </a>
         </li>
         <li class="list-group-item  list-group-item-custom">
-          <a routerLink="/" class="text-decoration-none">
+          <a (click)="logoff()" class="text-decoration-none">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </li>

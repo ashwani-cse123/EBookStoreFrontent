@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from '../helper';
 import { Observable } from 'rxjs';
@@ -27,6 +27,17 @@ export class CategoryService {
       return this.http.put(`${baseUrl}/updateCategory/${id}`,formdata, {responseType:"text"})
   }
   public getCategory(){
-    return this.http.get(`${baseUrl}/get-category`);
+    const token = localStorage.getItem('token'); // or from a service
+    console.log("category service token:" + token);
+    const headers = new HttpHeaders({
+      // 'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    });
+    console.log("this is from header: "+ headers);
+    return this.http.get(`${baseUrl}/get-category`, { headers });
   }
+
+  
+
 }

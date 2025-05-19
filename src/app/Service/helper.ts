@@ -1,2 +1,2 @@
-let baseUrl="http://localhost:8080/api/v1"
+let baseUrl="http://18.212.29.148:9091/api/v1"
 export default baseUrl

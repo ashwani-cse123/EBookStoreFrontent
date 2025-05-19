@@ -4,7 +4,7 @@
         <div class="card" style="width: 18rem;">
           <div class="card-body d-flex align-items-center">
             <img
-            [src]="'http://localhost:8080' + item.bookImage" alt="{{ item.bookImage }}  bookImage"
+            [src]="item.bookImage" alt="{{ item.bookImage }}  bookImage"
               alt="Book Image"
               class="circle-img me-3"
             >
@@ -18,7 +18,7 @@
               {{item.bookDiscription}}
             </p>
             <p class="card-text">
-              <strong>Price:</strong> ₹ {{item.bookPrice}}
+              <strong>Pages:</strong>  {{item.bookPrice}}
             </p>
             <div class="container mt-5">
               <div class="d-flex justify-content-start">
