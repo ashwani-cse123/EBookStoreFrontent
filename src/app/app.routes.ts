@@ -13,7 +13,6 @@ import { ReuseCategoryComponent } from './reusable-component/reuse-category/reus
 import { AllCategoryfindComponent } from './User/all-categoryfind/all-categoryfind.component';
 import { AllSubjectByCIdComponent } from './User/all-subject-by-cid/all-subject-by-cid.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { UpdateSubjectComponent } from './Admin/update-subject/update-subject.component';
 import { UpdateBookComponent } from './Admin/update-book/update-book.component';
 import { AdminGuardService } from './Service/auth/admin-guard.service';
